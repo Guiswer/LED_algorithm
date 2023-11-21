@@ -1,8 +1,6 @@
 from tkinter import *
 import time
 
-
-
 #colors
 
 #Background color
@@ -53,7 +51,7 @@ def ledD():
 
 def ledE():
     led_a.config(bg="#ffffff") 
-    led_b.config(bg="#ffffff")
+    led_b.config(bg=background_color)
     led_c.config(bg=background_color)
     led_d.config(bg="#ffffff")
     led_e.config(bg="#ffffff")
@@ -200,78 +198,72 @@ def ledZ():
     led_g.config(bg="#ffffff")
 
 
-def exec(word_type):
-    x = 0 
+x = 0
 
-    if "k" in word_type or "m" in word_type or "n" in word_type or "t" in word_type or "v" in word_type or "w" in word_type or "x" in word_type:
-        print("The letters: (k, m, n, t, v, w, x) are not allowed.")
+def exec(x,word_type):
+ 
+    while x < len(word_type):
 
-    if word_type == "":
-        print("Please, type a word.")
+        if word_type[x].lower() == "a":
+            ledA()
 
-    else:
-        while x < len(word_type):
+        elif word_type[x].lower() == "b":
+            ledB()
 
-            if word_type[x].lower() == "a":
-                ledA()
+        elif word_type[x].lower() == "c":
+            ledC()
 
-            elif word_type[x].lower() == "b":
-                ledB()
+        elif word_type[x].lower() == "d":
+            ledD()
 
-            elif word_type[x].lower() == "c":
-                ledC()
+        elif word_type[x].lower() == "e":
+            ledE()
 
-            elif word_type[x].lower() == "d":
-                ledD()
+        elif word_type[x].lower() == "f":
+            ledF()
 
-            elif word_type[x].lower() == "e":
-                ledE()
+        elif word_type[x].lower() == "g":
+            ledG()
+                            
+        elif word_type[x].lower() == "h":
+            ledH()
 
-            elif word_type[x].lower() == "f":
-                ledF()
+        elif word_type[x].lower() == "i":
+            ledI()
+                            
+        elif word_type[x].lower() == "j":
+            ledJ()
 
-            elif word_type[x].lower() == "g":
-                ledG()
-                
-            elif word_type[x].lower() == "h":
-                ledH()
+        elif word_type[x].lower() == "l":
+            ledL()
 
-            elif word_type[x].lower() == "i":
-                ledI()
-                
-            elif word_type[x].lower() == "j":
-                ledJ()
+        elif word_type[x].lower() == "o":
+            ledO()
 
-            elif word_type[x].lower() == "l":
-                ledL()
+        elif word_type[x].lower() == "p":
+            ledP()
 
-            elif word_type[x].lower() == "o":
-                ledO()
+        elif word_type[x].lower() == "q":
+            ledQ()
 
-            elif word_type[x].lower() == "p":
-                ledP()
+        elif word_type[x].lower() == "r":
+            ledR()
 
-            elif word_type[x].lower() == "q":
-                ledQ()
+        elif word_type[x].lower() == "s":
+            ledS()
 
-            elif word_type[x].lower() == "r":
-                ledR()
+        elif word_type[x].lower() == "u":
+            ledU()
+                            
+        elif word_type[x].lower() == "y":
+            ledY()
+                            
+        elif word_type[x].lower() == "z":
+            ledZ()
 
-            elif word_type[x].lower() == "s":
-                ledS()
+        x += 1 
 
-            elif word_type[x].lower() == "u":
-                ledU()
-                
-            elif word_type[x].lower() == "y":
-                ledY()
-                
-            elif word_type[x].lower() == "z":
-                ledZ()
 
-            x += 1 
-
-   
 #Screen
 
 screen = Tk()
@@ -294,13 +286,13 @@ label_by.place(x=10, y=1)
 
 #Label 'Type a word:'
 
-label_text = Label(screen, width=20, height=2, font=("Arial 20 bold"), fg="#ffffff", bg=background_color, bd=0,text='Type a word:')
+label_text = Label(screen, width=20, height=2, font=("Arial 20 bold"), fg="#ffffff", bg=background_color, bd=0,text='Type a letter:')
 label_text.place(x=400, y=10)
 
 
 #Button
 
-button_start = Button(screen, command=lambda: exec(textarea.get()), width=6, height=1, text="START", font=("Arial 15 bold") ,relief="solid", fg="#ffffff", bg="#BD0000", highlightthickness=3, highlightbackground="#E33535", bd=0)
+button_start = Button(screen, command=lambda: exec(x,textarea.get()), width=6, height=1, text="START", font=("Arial 15 bold") ,relief="solid", fg="#ffffff", bg="#BD0000", highlightthickness=3, highlightbackground="#E33535", bd=0)
 button_start.place(x=800, y=67)
 
 
